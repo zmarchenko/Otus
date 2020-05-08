@@ -13,11 +13,7 @@ public class OtusTest {
     private WebDriver driver;
     private Logger logger = LogManager.getLogger(OtusTest.class);
     private ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
-    mobilesTab mb;
-
-
-
-
+    MobilesTab mb;
 
 @BeforeEach
 public void setUp() {
@@ -25,7 +21,7 @@ public void setUp() {
     driver = new ChromeDriver();
     driver.manage().window().maximize();
     logger.info("Driver is set up");
-     mb = new mobilesTab(driver);
+     mb = new MobilesTab(driver);
 }
 
 @AfterEach
@@ -41,13 +37,30 @@ public void openYandex(){
     logger.info("Start page is opened");
     mb.goMobilesPage();
     logger.info("Mobile catalog is opened");
-    filtersPage fp = mb.openFilters();
-    logger.info("Filter page is opened");
+    FiltersPage fp = mb.openFilters();
+    logger.info("Filter page is opened. FiltersPage Class used");
     fp.useFilterXiaomi();
-    fp.openProductsTab();
-    logger.info("Products Tab is opened ");
-    fp.useFilterRedmi();
     logger.info("Filter Xiaomi is used");
+    fp.useFilterRedmi();
+    logger.info("Filter Redmi is used");
+    fp.getFilteredResults();
+    logger.info("Results are filtered. The user is redirected to the Mobile catalog. MobileTab Class used");
+    mb.priceSorting();
+    logger.info("Elements are sorted by price");
+    String firstTitle = mb.addFirstItemToCompare();
+    logger.info(firstTitle);
+    String secondTitle = mb.addSecondItemToCompare();
+    logger.info(secondTitle);
+    —omparePage cp = mb.goToCompare();
+    logger.info("Compare page is opened. ComparePage Class used");
+    int number = cp.getNumber();
+    Assertions.assertEquals(2, number);
+    logger.info("The number of elements is " + number);
+    String property = cp.getPropertyTitle();
+    Assertions.assertEquals("Œœ≈–¿÷»ŒÕÕ¿ﬂ —»—“≈Ã¿", property);
+    logger.info(property);
+    Boolean visibility = cp.differences();
+    Assertions.assertEquals(true, visibility);
 }
 
 
