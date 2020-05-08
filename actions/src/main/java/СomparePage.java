@@ -5,10 +5,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class ÑomparePage {
+public class Ã‘omparePage {
     private WebDriver driver;
 
-    public ÑomparePage(WebDriver driver) { this.driver=driver;}
+    public Ã‘omparePage(WebDriver driver) { this.driver=driver;}
 
     private By listOfElements = By.xpath("//div[contains(@class, 'n-compare-content__line')]/div");
     private By allProperties = By.xpath("//div[contains(@class, 'n-compare-show-controls')]/span[@class='link n-compare-show-controls__all']");
@@ -21,14 +21,14 @@ public class ÑomparePage {
 
     public String getPropertyTitle() {
         driver.findElement(allProperties).click();
-        WebElement operationSystem = (new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@data-bem, 'Îïåğàöèîííàÿ ñèñòåìà')]/parent::div"))));
+        WebElement operationSystem = (new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@data-bem, 'ĞĞ¿ĞµÑ€Ğ°Ñ†Ğ¸Ğ¾Ğ½Ğ½Ğ°Ñ ÑĞ¸ÑÑ‚ĞµĞ¼Ğ°')]/parent::div"))));
         String text = operationSystem.getText();
         return text;
     }
 
     public Boolean differences(){
         driver.findElement(differentProperties).click();
-        Boolean operationSystemVisibility = (new WebDriverWait(driver,10).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[contains(@data-bem, 'Îïåğàöèîííàÿ ñèñòåìà')]/parent::div"))));
+        Boolean operationSystemVisibility = (new WebDriverWait(driver,10).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[contains(@data-bem, 'ĞĞ¿ĞµÑ€Ğ°Ñ†Ğ¸Ğ¾Ğ½Ğ½Ğ°Ñ ÑĞ¸ÑÑ‚ĞµĞ¼Ğ°')]/parent::div"))));
         return operationSystemVisibility;
     }
 
