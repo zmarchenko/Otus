@@ -6,6 +6,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
 
@@ -17,11 +19,16 @@ public class OtusTest {
 
 @BeforeEach
 public void setUp() {
+    DesiredCapabilities caps = new DesiredCapabilities();/*возможности запуска браузера
+     */
+    caps.setCapability("UnexpectedAlertBehaviour", "accept");//на каждую сapability отдельный метод
+    ChromeOptions opt = new ChromeOptions();//тут можно опции повыбирать
+    opt.addArguments("start-fullscreen");
     WebDriverManager.chromedriver().setup();
-    driver = new ChromeDriver();
+    driver = new ChromeDriver(caps);//в браузер передаются настройки
+    caps.setCapability(ChromeOptions.CAPABILITY, opt);//этот метод позволяет передавать опции через сapability
     driver.manage().window().maximize();
-    logger.info("Driver is set up");
-     mb = new MobilesTab(driver);
+    mb = new MobilesTab(driver);
 }
 
 @AfterEach
@@ -32,35 +39,11 @@ public void tearDown(){
 }
 
 @Test
-public void openYandex(){
+public void openYandex() {
     driver.get(cfg.yandex());
     logger.info("Start page is opened");
     mb.goMobilesPage();
     logger.info("Mobile catalog is opened");
-    FiltersPage fp = mb.openFilters();
-    logger.info("Filter page is opened. FiltersPage Class used");
-    fp.useFilterXiaomi();
-    logger.info("Filter Xiaomi is used");
-    fp.useFilterRedmi();
-    logger.info("Filter Redmi is used");
-    fp.getFilteredResults();
-    logger.info("Results are filtered. The user is redirected to the Mobile catalog. MobileTab Class used");
-    mb.priceSorting();
-    logger.info("Elements are sorted by price");
-    String firstTitle = mb.addFirstItemToCompare();
-    logger.info(firstTitle);
-    String secondTitle = mb.addSecondItemToCompare();
-    logger.info(secondTitle);
-    СomparePage cp = mb.goToCompare();
-    logger.info("Compare page is opened. ComparePage Class used");
-    int number = cp.getNumber();
-    Assertions.assertEquals(2, number);
-    logger.info("The number of elements is " + number);
-    String property = cp.getPropertyTitle();
-    Assertions.assertEquals("ОПЕРАЦИОННАЯ СИСТЕМА", property);
-    logger.info(property);
-    Boolean visibility = cp.differences();
-    Assertions.assertEquals(true, visibility);
 }
 
 
