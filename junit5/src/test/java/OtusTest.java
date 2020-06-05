@@ -15,7 +15,7 @@ public class OtusTest {
     private WebDriver driver;
     private Logger logger = LogManager.getLogger(OtusTest.class);
     private ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
-    MobilesTab mb;
+
 
 @BeforeEach
 public void setUp() {
@@ -28,7 +28,6 @@ public void setUp() {
     driver = new ChromeDriver(caps);//в браузер передаются настройки
     caps.setCapability(ChromeOptions.CAPABILITY, opt);//этот метод позволяет передавать опции через сapability
     driver.manage().window().maximize();
-    mb = new MobilesTab(driver);
 }
 
 @AfterEach
@@ -38,13 +37,6 @@ public void tearDown(){
     }
 }
 
-@Test
-public void openYandex() {
-    driver.get(cfg.yandex());
-    logger.info("Start page is opened");
-    mb.goMobilesPage();
-    logger.info("Mobile catalog is opened");
-}
 
 
 }
