@@ -11,4 +11,5 @@ public interface ServerConfig extends Config{
     @Key("yandex")
     String yandex();
 
+
 }
