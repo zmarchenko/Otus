@@ -13,6 +13,8 @@
         <module>testNG</module>
         <module>model</module>
         <module>actions</module>
+        <module>pages</module>
+        <module>pageObject</module>
     </modules>
 
 

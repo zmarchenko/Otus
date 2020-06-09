@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class loginPage extends AbstractPage {
+public class LoginPage extends AbstractPage {
     Actions action = new Actions(driver);
     //URLs
     private String URL = config.otus();
@@ -21,9 +21,10 @@ public class loginPage extends AbstractPage {
     //WebElements mainPage
     private By loginButton = By.cssSelector("button[data-modal-id='new-log-reg'].header2__auth");
     private By menuDropdown = By.cssSelector("div.header2-menu__item-wrapper__username");
+    private By privateOfficeOption = By.cssSelector("a[href='/learning/']");
 
     //driver
-    public loginPage(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         super(driver);
     }
 
@@ -34,14 +35,13 @@ public class loginPage extends AbstractPage {
         driver.findElement(emailField).sendKeys(email);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(submitBtn).click();
-    }//open authorisation pop-up; put email; put password; click on the submit button
+    } //open authorisation pop-up; put email; put password; click on the submit button
 
-    public PrivateOffice getPrivateOffice() {
-        action.moveToElement((WebElement) menuDropdown);
-        
-
+    public PrivateOffice getPrivateOffice () {
+        action.moveToElement(driver.findElement(By.cssSelector("div.header2-menu__item-wrapper__username")));
+        driver.findElement(privateOfficeOption).click();
+        return new PrivateOffice(driver);
     }
-
 
 
 }
