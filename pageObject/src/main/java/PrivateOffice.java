@@ -1,10 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
-import java.util.HashMap;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class PrivateOffice extends AbstractPage{
@@ -12,29 +8,24 @@ public class PrivateOffice extends AbstractPage{
         super(driver);
     }
 
-    //Variables
-    String firstName = "fname";
-    String lastName = "lname";
-    String lFirstName = "fname_latin";
-    String lLastName = "lname_latin";
-    String blogName = "blog_name";
+
 
     //WebElements
     private By personal = By.cssSelector("div.title+div.nav a[href='/lk/biography/personal/']");
-    private By nameField = By.cssSelector("");
-    private By latinNameField = By.cssSelector("");
-    private By surnameField = By.cssSelector("");
-    private By latinSurnameField = By.cssSelector("");
-    private By blogNameField = By.cssSelector("");
-    private By birthdayField = By.cssSelector("");
-    private By photo = By.cssSelector("");
-    private By saveBtn = By.cssSelector("");
+    private By nameField = By.cssSelector("input[id = 'id_fname']");
+    private By latinNameField = By.cssSelector("input[id = 'id_fname_latin']");
+    private By surnameField = By.cssSelector("input[id = 'id_lname']");
+    private By latinSurnameField = By.cssSelector("input[id = 'id_lname_latin']");
+    private By blogNameField = By.cssSelector("input[id = 'id_blog_name']");
+    private By birthdayField = By.cssSelector("input[name = 'date_of_birth']");
+    private By saveBtn = By.cssSelector("button[name = 'continue']");
 
 
 
 
     //Methods
     public void getPersonalInfoForm(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.header2-menu__item-wrapper__username")));
         driver.findElement(personal).click();
     }
 

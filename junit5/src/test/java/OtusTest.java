@@ -28,6 +28,8 @@ public void setUp() {
     driver = new ChromeDriver(caps);//в браузер передаются настройки
     caps.setCapability(ChromeOptions.CAPABILITY, opt);//этот метод позволяет передавать опции через сapability
     driver.manage().window().maximize();
+    driver.get(cfg.otus());
+
 }
 
 @AfterEach
@@ -35,6 +37,15 @@ public void tearDown(){
     if (driver != null) {
         driver.quit();
     }
+}
+
+@Test
+    public void testLogin(){
+    LoginPage loginPage = new LoginPage(driver);
+    loginPage.login("marzhanter@gmail.com", "test1212");
+    PrivateOffice privateOffice = loginPage.getPrivateOffice();
+    privateOffice.getPersonalInfoForm();
+    privateOffice.setPersonal("Ftest", "LFtest", "Ltest", "LLTest", "OMG", "26.02.1992");
 }
 
 
