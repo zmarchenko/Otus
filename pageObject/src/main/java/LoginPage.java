@@ -10,6 +10,7 @@ public class LoginPage extends AbstractPage {
     Actions action = new Actions(driver);
     //URLs
     public String URL = config.otus();
+    WebDriverWait wait = new WebDriverWait(driver, 5);
 
     //Ñredentials
     private String email = "doib3vmani.com";
