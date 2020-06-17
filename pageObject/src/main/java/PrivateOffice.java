@@ -1,12 +1,14 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class PrivateOffice extends AbstractPage{
     public PrivateOffice(WebDriver driver) {
         super(driver);
     }
+    WebDriverWait wait = new WebDriverWait(driver, 5);
 
 
 
@@ -30,15 +32,17 @@ public class PrivateOffice extends AbstractPage{
     }
 
     public void setPersonal (String name, String latinName, String surname, String latinSurname, String blogName, String birthday){
-        driver.findElement(nameField)
-                .clear();
-        driver.findElement(nameField)
-                .sendKeys(name);
+        driver.findElement(nameField).clear();
+        driver.findElement(nameField).sendKeys(name);
+        driver.findElement(latinNameField).clear();
         driver.findElement(latinNameField).sendKeys(latinName);
+        driver.findElement(surnameField).clear();
         driver.findElement(surnameField).sendKeys(surname);
+        driver.findElement(latinSurnameField).clear();
         driver.findElement(latinSurnameField).sendKeys(latinSurname);
         driver.findElement(blogNameField).clear();
         driver.findElement(blogNameField).sendKeys(blogName);
+        driver.findElement(birthdayField).clear();
         driver.findElement(birthdayField).sendKeys(birthday);
         driver.findElement(saveBtn).click();
 

@@ -48,6 +48,11 @@ public void tearDown(){
     privateOffice.setPersonal("Ftest", "LFtest", "Ltest", "LLTest", "OMG", "26.02.1992");
 }
 
+@Test
+    public void  checkPersonal(){
+
+}
+
 
 
 }
