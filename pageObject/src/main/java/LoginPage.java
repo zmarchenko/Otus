@@ -2,11 +2,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class LoginPage extends AbstractPage {
     Actions action = new Actions(driver);
     //URLs
-    private String URL = config.otus();
+    public String URL = config.otus();
 
     //Ñredentials
     private String email = "doib3vmani.com";
@@ -38,7 +41,8 @@ public class LoginPage extends AbstractPage {
     } //open authorisation pop-up; put email; put password; click on the submit button
 
     public PrivateOffice getPrivateOffice () {
-        action.moveToElement(driver.findElement(By.cssSelector("div.header2-menu__item-wrapper__username")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.header2-menu__item-wrapper__username")));
+        action.moveToElement(driver.findElement(By.cssSelector("div.header2-menu__item-wrapper__username"))).click();
         driver.findElement(privateOfficeOption).click();
         return new PrivateOffice(driver);
     }
