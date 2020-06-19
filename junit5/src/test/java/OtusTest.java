@@ -8,12 +8,12 @@ public class OtusTest extends BaseHooks {
     @Test
     public void testLogin(){
     LoginPage loginPage = new LoginPage(driver);
-    loginPage.login("marzhanter@gmail.com", "test1212");
+    loginPage.login("setYourMail", "setYourPass");
     PrivateOffice privateOffice = loginPage.getPrivateOffice();
     privateOffice.getPersonalInfoForm();
     privateOffice.setPersonal("Ftest", "LFtest", "Ltest", "LLTest", "OMG", "26.02.1992");
     cleanAndRefresh();
-    loginPage.getLoginPage("marzhanter@gmail.com", "test1212");
+    loginPage.getLoginPage("setYourMail", "setYourPass");
     privateOffice.getPersonalInfoForm();
     Assertions.assertEquals("Ftest", privateOffice.getPersonal("nameField"));
     Assertions.assertEquals("LFtest", privateOffice.getPersonal("latinNameField"));
