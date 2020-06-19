@@ -41,15 +41,21 @@ public void tearDown(){
 
 @Test
     public void testLogin(){
-    LoginPage loginPage = new LoginPage(driver);
-    loginPage.login("marzhanter@gmail.com", "test1212");
-    PrivateOffice privateOffice = loginPage.getPrivateOffice();
-    privateOffice.getPersonalInfoForm();
-    privateOffice.setPersonal("Ftest", "LFtest", "Ltest", "LLTest", "OMG", "26.02.1992");
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login("marzhanter@gmail.com", "test1212");
+        PrivateOffice privateOffice = loginPage.getPrivateOffice();
+        privateOffice.getPersonalInfoForm();
+        privateOffice.setPersonal("Ftest", "LFtest", "Ltest", "LLTest", "OMG", "26.02.1992");
 }
 
 @Test
     public void  checkPersonal(){
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login("marzhanter@gmail.com", "test1212");
+        PrivateOffice privateOffice = loginPage.getPrivateOffice();
+        privateOffice.getPersonalInfoForm();
+        Assertions.assertEquals("Ftest", privateOffice.getPersonal("nameField"));
+        System.out.println(privateOffice.getPersonal("nameField"));
 
 }
 
