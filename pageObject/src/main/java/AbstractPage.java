@@ -15,7 +15,8 @@ public abstract  class AbstractPage {
         this.driver = driver;
     }
 
-    public Logger logger = LogManager.getLogger(AbstractPage.class);
+    public Logger loggerLogin = LogManager.getLogger(LoginPage.class);
+    public Logger loggerPrivatePage = LogManager.getLogger(PrivateOffice.class);
 
 
 
