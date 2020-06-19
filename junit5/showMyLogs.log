@@ -501,3 +501,37 @@
 2020-05-08 21:27:11,467 INFO OtusTest [main] Compare page is opened. ComparePage Class used
 2020-05-08 21:27:11,526 INFO OtusTest [main] The number of elements is 2
 2020-05-08 21:27:12,367 INFO OtusTest [main] Œœ≈–¿÷»ŒÕÕ¿ﬂ —»—“≈Ã¿
+2020-06-20 02:18:17,866 INFO BaseHooks [main] Driver is set up
+2020-06-20 02:18:23,524 INFO BaseHooks [main] Open start pagehttps://otus.ru/
+2020-06-20 02:18:25,931 INFO AbstractPage [main] Try to login
+2020-06-20 02:18:29,085 INFO AbstractPage [main] Logged in
+2020-06-20 02:18:36,281 INFO AbstractPage [main] PrivateOffice is opened
+2020-06-20 02:18:36,289 INFO AbstractPage [main] etPersonalInfoForm
+2020-06-20 02:18:40,707 INFO AbstractPage [main] setPersonnal started
+2020-06-20 02:18:52,687 INFO BaseHooks [main] Cookies were deleted
+2020-06-20 02:18:56,005 INFO BaseHooks [main] Page refreshed
+2020-06-20 02:18:56,006 INFO AbstractPage [main] Get login page after refreshing
+2020-06-20 02:18:57,305 INFO AbstractPage [main] etPersonalInfoForm
+2020-06-20 02:19:02,798 INFO AbstractPage [main] getPersonal started
+2020-06-20 02:19:04,466 INFO AbstractPage [main] getPersonal started
+2020-06-20 02:19:04,517 INFO AbstractPage [main] getPersonal started
+2020-06-20 02:19:04,566 INFO AbstractPage [main] getPersonal started
+2020-06-20 02:19:04,603 INFO AbstractPage [main] getPersonal started
+2020-06-20 02:19:04,649 INFO AbstractPage [main] getPersonal started
+2020-06-20 02:24:29,451 INFO OtusTest [main] Driver is set up
+2020-06-20 02:24:35,351 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-06-20 02:24:38,416 INFO LoginPage [main] Try to login
+2020-06-20 02:24:41,504 INFO LoginPage [main] Logged in
+2020-06-20 02:24:49,165 INFO LoginPage [main] PrivateOffice is opened
+2020-06-20 02:24:49,170 INFO PrivateOffice [main] etPersonalInfoForm
+2020-06-20 02:24:53,101 INFO PrivateOffice [main] setPersonnal started
+2020-06-20 02:25:04,273 INFO OtusTest [main] Cookies were deleted
+2020-06-20 02:25:08,760 INFO OtusTest [main] Page refreshed
+2020-06-20 02:25:08,760 INFO LoginPage [main] Get login page after refreshing
+2020-06-20 02:25:10,126 INFO PrivateOffice [main] etPersonalInfoForm
+2020-06-20 02:25:17,342 INFO PrivateOffice [main] getPersonal started
+2020-06-20 02:25:17,459 INFO PrivateOffice [main] getPersonal started
+2020-06-20 02:25:17,501 INFO PrivateOffice [main] getPersonal started
+2020-06-20 02:25:17,538 INFO PrivateOffice [main] getPersonal started
+2020-06-20 02:25:17,605 INFO PrivateOffice [main] getPersonal started
+2020-06-20 02:25:17,644 INFO PrivateOffice [main] getPersonal started
