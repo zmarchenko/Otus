@@ -19,14 +19,14 @@ public class OtusTest {
 
 @BeforeEach
 public void setUp() {
-    DesiredCapabilities caps = new DesiredCapabilities();/*возможности запуска браузера
+    DesiredCapabilities caps = new DesiredCapabilities();/*ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГЁ Г§Г ГЇГіГ±ГЄГ  ГЎГ°Г ГіГ§ГҐГ°Г 
      */
-    caps.setCapability("UnexpectedAlertBehaviour", "accept");//на каждую сapability отдельный метод
-    ChromeOptions opt = new ChromeOptions();//тут можно опции повыбирать
+    caps.setCapability("UnexpectedAlertBehaviour", "accept");//Г­Г  ГЄГ Г¦Г¤ГіГѕ Г±apability Г®ГІГ¤ГҐГ«ГјГ­Г»Г© Г¬ГҐГІГ®Г¤
+    ChromeOptions opt = new ChromeOptions();//ГІГіГІ Г¬Г®Г¦Г­Г® Г®ГЇГ¶ГЁГЁ ГЇГ®ГўГ»ГЎГЁГ°Г ГІГј
     opt.addArguments("start-fullscreen");
     WebDriverManager.chromedriver().setup();
-    driver = new ChromeDriver(caps);//в браузер передаются настройки
-    caps.setCapability(ChromeOptions.CAPABILITY, opt);//этот метод позволяет передавать опции через сapability
+    driver = new ChromeDriver(caps);//Гў ГЎГ°Г ГіГ§ГҐГ° ГЇГҐГ°ГҐГ¤Г ГѕГІГ±Гї Г­Г Г±ГІГ°Г®Г©ГЄГЁ
+    caps.setCapability(ChromeOptions.CAPABILITY, opt);//ГЅГІГ®ГІ Г¬ГҐГІГ®Г¤ ГЇГ®Г§ГўГ®Г«ГїГҐГІ ГЇГҐГ°ГҐГ¤Г ГўГ ГІГј Г®ГЇГ¶ГЁГЁ Г·ГҐГ°ГҐГ§ Г±apability
     driver.manage().window().maximize();
     driver.get(cfg.otus());
 
@@ -42,7 +42,7 @@ public void tearDown(){
 @Test
     public void testLogin(){
     LoginPage loginPage = new LoginPage(driver);
-    loginPage.login("marzhanter@gmail.com", "test1212");
+    loginPage.login("email", "password");
     PrivateOffice privateOffice = loginPage.getPrivateOffice();
     privateOffice.getPersonalInfoForm();
     privateOffice.setPersonal("Ftest", "LFtest", "Ltest", "LLTest", "OMG", "26.02.1992");
