@@ -535,3 +535,21 @@
 2020-06-20 02:25:17,538 INFO PrivateOffice [main] getPersonal started
 2020-06-20 02:25:17,605 INFO PrivateOffice [main] getPersonal started
 2020-06-20 02:25:17,644 INFO PrivateOffice [main] getPersonal started
+2020-06-29 01:22:42,605 INFO OtusTest [main] Driver is set up
+2020-06-29 01:22:48,607 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-06-30 01:32:59,818 INFO OtusTest [main] Driver is set up
+2020-06-30 01:32:59,866 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-06-30 23:47:52,334 INFO OtusTest [main] Driver is set up
+2020-06-30 23:47:55,037 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-07-01 00:08:45,343 INFO OtusTest [main] Driver is set up
+2020-07-01 00:08:45,347 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-07-01 00:30:10,746 INFO OtusTest [main] Driver is set up
+2020-07-01 00:30:12,826 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-07-01 00:38:39,977 INFO OtusTest [main] Driver is set up
+2020-07-01 00:38:39,980 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-07-01 00:57:47,063 INFO OtusTest [main] Driver is set up
+2020-07-01 00:57:47,065 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-07-01 01:06:42,709 INFO OtusTest [main] Driver is set up
+2020-07-01 01:06:42,712 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-07-01 01:10:23,632 INFO OtusTest [main] Driver is set up
+2020-07-01 01:10:23,635 INFO OtusTest [main] Open start pagehttps://otus.ru/

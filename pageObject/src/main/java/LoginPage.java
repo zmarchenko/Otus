@@ -12,10 +12,13 @@ public class LoginPage extends AbstractPage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
+    WebDriverWait wait = new WebDriverWait(driver, 15);
+
+
 
     Actions action = new Actions(driver);
     //URLs
-    WebDriverWait wait = new WebDriverWait(driver, 15);
+
 
     //WebElements login pop-up
     @FindBy(css = "input[type='text'].js-email-input")

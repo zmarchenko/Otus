@@ -11,7 +11,9 @@ public class PrivateOffice extends AbstractPage{
     public PrivateOffice(WebDriver driver) {
         super(driver);
     }
-    WebDriverWait wait = new WebDriverWait(driver, 5);
+
+    WebDriverWait wait = new WebDriverWait(driver, 15);
+
 
 
 
