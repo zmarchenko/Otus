@@ -5,9 +5,9 @@ import org.junit.jupiter.api.*;
 
 public class OtusTest extends BaseHooks {
 
-    @Test
+   /* @Test
     public void testLogin(){
-    LoginPage loginPage = new LoginPage(driver);
+    LoginPage loginPage = new LoginPage();
     loginPage.login("setYourMail", "setYourPass");
     PrivateOffice privateOffice = loginPage.getPrivateOffice();
     privateOffice.getPersonalInfoForm();
@@ -22,7 +22,7 @@ public class OtusTest extends BaseHooks {
     Assertions.assertEquals("OMG", privateOffice.getPersonal("blogNameField"));
     Assertions.assertEquals("26.02.1992", privateOffice.getPersonal("birthdayField"));
 
-}
+} */
 
 
 
