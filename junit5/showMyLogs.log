@@ -553,3 +553,7 @@
 2020-07-01 01:06:42,712 INFO OtusTest [main] Open start pagehttps://otus.ru/
 2020-07-01 01:10:23,632 INFO OtusTest [main] Driver is set up
 2020-07-01 01:10:23,635 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-07-01 02:50:51,902 INFO OtusTest [main] Driver is set up
+2020-07-01 02:50:51,904 INFO OtusTest [main] Open start pagehttps://otus.ru/
+2020-07-01 02:52:21,581 INFO LoginPage [main] Try to login
+2020-07-01 02:52:29,445 INFO LoginPage [main] Logged in

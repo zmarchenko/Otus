@@ -1,21 +1,11 @@
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 
 public class PrivateOffice extends AbstractPage{
-    public PrivateOffice(WebDriver driver) {
-        super(driver);
-    }
-
-    WebDriverWait wait = new WebDriverWait(driver, 15);
-
-
-
 
     //WebElements
     @FindBy(css = "input[id = 'id_fname']")
@@ -39,9 +29,11 @@ public class PrivateOffice extends AbstractPage{
     @FindBy (css = "button[name = 'continue']")
     WebElement saveBtn;
 
-    private By personal = By.cssSelector("div.title+div.nav a[href='/lk/biography/personal/']");
+    private final By personal = By.cssSelector("div.title+div.nav a[href='/lk/biography/personal/']");
 
-
+    public PrivateOffice() {
+        super(driver, wait);
+    }
 
 
     //Methods

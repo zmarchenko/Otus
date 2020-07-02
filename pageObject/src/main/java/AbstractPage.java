@@ -1,26 +1,21 @@
-import Factory.Browsers;
-import config.ServerConfig;
-import org.aeonbits.owner.ConfigFactory;
+import factory.Browsers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import static factory.Enviroment.getEnv;
+import static factory.WebDriverFactory.getDriver;
 
-public abstract  class AbstractPage {
-    WebDriver driver;
-    WebDriverWait wait;
-    public ServerConfig config = ConfigFactory.create(ServerConfig.class);
-    public AbstractPage (WebDriver driver) {
-        this.wait = new WebDriverWait(driver, 15);
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
+ public abstract  class AbstractPage {
+    protected WebDriver driver;
+
+    public AbstractPage() {
+        Browsers browser = getEnv();
+        this.driver = getDriver(browser);
     }
 
-    public Logger loggerLogin = LogManager.getLogger(LoginPage.class);
-    public Logger loggerPrivatePage = LogManager.getLogger(PrivateOffice.class);
-
-
+    Logger loggerPrivatePage = LogManager.getLogger(PrivateOffice.class);
 
 
 

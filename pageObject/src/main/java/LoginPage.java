@@ -1,3 +1,5 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,32 +8,32 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static factory.WebDriverFactory.getDriver;
+
 
 public class LoginPage extends AbstractPage {
-    //driver
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage(){
+        super();
     }
+
     WebDriverWait wait = new WebDriverWait(driver, 15);
 
-
-
+    Logger loggerLogin = LogManager.getLogger(LoginPage.class);
     Actions action = new Actions(driver);
-    //URLs
-
 
     //WebElements login pop-up
     @FindBy(css = "input[type='text'].js-email-input")
     WebElement emailField;
 
-
-    private By passwordField = By.cssSelector("input[type='password']");
-    private By submitBtn = By.cssSelector("form[action='/login/'] button[type='submit']");
-    private By privateOfficeOption = By.cssSelector("a[href='/learning/']");
+    private final By passwordField = By.cssSelector("input[type='password']");
+    private final By submitBtn = By.cssSelector("form[action='/login/'] button[type='submit']");
+    private final By privateOfficeOption = By.cssSelector("a[href='/learning/']");
 
     //WebElements mainPage
     @FindBy(css = "button[data-modal-id='new-log-reg'].header2__auth")
     WebElement loginButton;
+
+
 
     //methods
 
@@ -49,7 +51,7 @@ public class LoginPage extends AbstractPage {
         action.moveToElement(driver.findElement(By.cssSelector("div.header2-menu__item-wrapper__username"))).click();
         driver.findElement(privateOfficeOption).click();
         loggerLogin.info("PrivateOffice is opened");
-        return new PrivateOffice(driver);
+        return new PrivateOffice();
 
     }
 
